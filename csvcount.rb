@@ -1,6 +1,6 @@
 # check command line args
 if ARGV.length < 3
-  puts "Usage: ruby orderbyfreq.rb YOURFILENAME.csv START_COLUMN END_COLUMN [LINES_TO_SKIP]"
+  puts "Usage: ruby csvcount.rb YOURFILENAME.csv START_COLUMN END_COLUMN [LINES_TO_SKIP]"
   exit
 end
 
@@ -59,7 +59,6 @@ IO.readlines(filename).each do |line|
       col = cols[col_num]
       if col && col.strip != ''
         c = col.to_i
-        #nums[c] = 1 + (nums[c] ? nums[c] : 0) if c != nil
         list.inc(c) if c != nil
         puts line if c == 0
       end
@@ -71,4 +70,3 @@ end
 list.get.each do |count|
   puts '' + count.number.to_s + ":\t" + count.count.to_s + "\t(" + count.freq.to_s + ")"
 end
-# puts count
