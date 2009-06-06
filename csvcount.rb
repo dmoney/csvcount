@@ -35,9 +35,6 @@ class NumCountList
     @total = @total + 1
   end
   def get
-    #if @counts[0] == nil
-    #  @counts.shift
-    #end
     counts_a = []
     @counts.keys.each {|i| counts_a << @counts[i]}
     counts_a.sort!{|a, b| b.count <=> a.count }.each do
